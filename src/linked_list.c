@@ -253,6 +253,15 @@ int get_linked_list_length(LinkedList *linked_list)
   return number_of_nodes;
 }
 
+/**
+ * \brief Reverses the order of elements in a linked list.
+ *
+ * This function reverses the `next_node` pointers of each node in a linked list,
+ * making the first node become the last, the second node become the second-to-last, and so on.
+ * It also updates the `head_node` pointer of the linked list to point to the new first node after reversal.
+ *
+ * \param linked_list Pointer to the linked list to be reversed.
+ */
 void reverse_linked_list(LinkedList *linked_list)
 {
   if (linked_list->head_node == NULL)
