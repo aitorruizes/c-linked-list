@@ -252,3 +252,27 @@ int get_linked_list_length(LinkedList *linked_list)
 
   return number_of_nodes;
 }
+
+void reverse_linked_list(LinkedList *linked_list)
+{
+  if (linked_list->head_node == NULL)
+  {
+    printf("[ERROR] You cannot reverse an empty linked list.\n");
+
+    return;
+  }
+
+  Node *previous_node = NULL;
+  Node *current_node = linked_list->head_node;
+  Node *next_node = NULL;
+
+  while (current_node != NULL)
+  {
+    next_node = current_node->next_node;
+    current_node->next_node = previous_node;
+    previous_node = current_node;
+    current_node = next_node;
+  }
+
+  linked_list->head_node = previous_node;
+}

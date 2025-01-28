@@ -164,4 +164,6 @@ void free_linked_list(LinkedList *linked_list);
  */
 int get_linked_list_length(LinkedList *linked_list);
 
+void reverse_linked_list(LinkedList *linked_list);
+
 #endif
