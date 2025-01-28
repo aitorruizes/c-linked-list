@@ -83,7 +83,20 @@ typedef struct LinkedList
  */
 LinkedList *create_linked_list(PrintDataFunction print_data_function, FreeDataFunction free_data_function, CompareDataFunction compare_data_function);
 
+/**
+ * \brief Creates a new node with the provided data.
+ *
+ * This function allocates memory for a new `Node` structure, sets its data to the provided
+ * `node_data`, and initializes its `next_node` pointer to `NULL`. It checks if the `node_data`
+ * is `NULL` before proceeding, and if so, prints an error message and returns `NULL`. It also
+ * checks for memory allocation failure and prints an error message if allocation fails.
+ *
+ * \param node_data The data to be stored in the new node. This cannot be `NULL`.
+ *
+ * \return A pointer to the newly created `Node` if successful, or `NULL` if an error occurs.
+ */
 Node *create_node(NodeData node_data);
+
 void insert_node_at_head(LinkedList *linked_list, NodeData node_data);
 void insert_node_at_tail(LinkedList *linked_list, NodeData node_data);
 void print_linked_list(LinkedList *linked_list);

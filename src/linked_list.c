@@ -59,6 +59,18 @@ LinkedList *create_linked_list(PrintDataFunction print_data_function, FreeDataFu
   return linked_list;
 }
 
+/**
+ * \brief Creates a new node with the provided data.
+ *
+ * This function allocates memory for a new `Node` structure, sets its data to the provided
+ * `node_data`, and initializes its `next_node` pointer to `NULL`. It checks if the `node_data`
+ * is `NULL` before proceeding, and if so, prints an error message and returns `NULL`. It also
+ * checks for memory allocation failure and prints an error message if allocation fails.
+ *
+ * \param node_data The data to be stored in the new node. This cannot be `NULL`.
+ *
+ * \return A pointer to the newly created `Node` if successful, or `NULL` if an error occurs.
+ */
 Node *create_node(NodeData node_data)
 {
   if (node_data == NULL)
