@@ -43,3 +43,27 @@ LinkedList *create_linked_list(PrintDataFunction print_data_function, FreeDataFu
 
   return linked_list;
 }
+
+Node *create_node(NodeData node_data)
+{
+  if (node_data == NULL)
+  {
+    printf("[ERROR] You cannot create a new node with a NULL value.\n");
+
+    return NULL;
+  }
+
+  Node *node = (Node *)malloc(sizeof(Node));
+
+  if (node == NULL)
+  {
+    printf("[ERROR] Memory allocation failed for 'node'.\n");
+
+    return NULL;
+  }
+
+  node->node_data = node_data;
+  node->next_node = NULL;
+
+  return node;
+}

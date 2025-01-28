@@ -24,5 +24,6 @@ typedef struct LinkedList
 } LinkedList;
 
 LinkedList *create_linked_list(PrintDataFunction print_data_function, FreeDataFunction free_data_function, CompareDataFunction compare_data_function);
+Node *create_node(NodeData node_data);
 
 #endif
