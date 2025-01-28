@@ -285,3 +285,20 @@ void reverse_linked_list(LinkedList *linked_list)
 
   linked_list->head_node = previous_node;
 }
+
+Node *find_node_by_data(LinkedList *linked_list, NodeData node_data)
+{
+  Node *current_node = linked_list->head_node;
+
+  while (current_node != NULL)
+  {
+    if (linked_list->compare_data_function(current_node->node_data, node_data))
+    {
+      return current_node;
+    }
+
+    current_node = current_node->next_node;
+  }
+
+  return NULL;
+}
