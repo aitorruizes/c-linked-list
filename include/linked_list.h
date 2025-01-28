@@ -124,6 +124,17 @@ void insert_node_at_head(LinkedList *linked_list, NodeData node_data);
  * \param node_data The data to be stored in the new node. This cannot be `NULL`.
  */
 void insert_node_at_tail(LinkedList *linked_list, NodeData node_data);
+
+/**
+ * \brief Prints all the nodes in the linked list.
+ *
+ * This function iterates through the entire linked list starting from the head node and
+ * prints the data stored in each node using the `print_data_function` provided during
+ * the creation of the linked list. The function continues until it reaches the end of the list,
+ * where the `next_node` is `NULL`.
+ *
+ * \param linked_list A pointer to the `LinkedList` to be printed.
+ */
 void print_linked_list(LinkedList *linked_list);
 void free_linked_list(LinkedList *linked_list);
 int get_linked_list_length(LinkedList *linked_list);
