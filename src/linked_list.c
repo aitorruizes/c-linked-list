@@ -43,3 +43,14 @@ LinkedList *create_linked_list(void (*print_data_function)(NodeData *), void (*f
 
   return linked_list;
 }
+
+bool is_valid_function_pointer(void (*function_pointer)(NodeData *), const char *function_name)
+{
+  if (function_pointer == NULL)
+  {
+    printf("'%s' cannot be NULL.\n");
+    return false;
+  }
+
+  return true;
+}
