@@ -136,6 +136,18 @@ void insert_node_at_tail(LinkedList *linked_list, NodeData node_data);
  * \param linked_list A pointer to the `LinkedList` to be printed.
  */
 void print_linked_list(LinkedList *linked_list);
+
+/**
+ * \brief Frees all the nodes in the linked list and releases the memory.
+ *
+ * This function iterates through the linked list, starting from the head node, and frees
+ * each node’s data using the `free_data_function` provided during the creation of the linked list.
+ * After freeing the node’s data, it frees the memory allocated for the node itself. The function
+ * continues until all nodes are freed. Afterward, it sets the `head_node` and `tail_node` of the
+ * linked list to `NULL` to indicate that the list is empty.
+ *
+ * \param linked_list A pointer to the `LinkedList` to be freed.
+ */
 void free_linked_list(LinkedList *linked_list);
 int get_linked_list_length(LinkedList *linked_list);
 
