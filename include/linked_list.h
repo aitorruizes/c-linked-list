@@ -97,7 +97,20 @@ LinkedList *create_linked_list(PrintDataFunction print_data_function, FreeDataFu
  */
 Node *create_node(NodeData node_data);
 
+/**
+ * \brief Inserts a new node at the head of the linked list.
+ *
+ * This function creates a new node using the provided `node_data` and inserts it at the head
+ * of the linked list. If the linked list is empty (i.e., `head_node` is `NULL`), the new node
+ * becomes both the head and the tail of the list. If the list already has nodes, the new node
+ * is inserted at the front, and the previous head becomes the second node. The function also
+ * checks if the node creation fails and prints an error message if necessary.
+ *
+ * \param linked_list A pointer to the `LinkedList` where the node will be inserted.
+ * \param node_data The data to be stored in the new node. This cannot be `NULL`.
+ */
 void insert_node_at_head(LinkedList *linked_list, NodeData node_data);
+
 void insert_node_at_tail(LinkedList *linked_list, NodeData node_data);
 void print_linked_list(LinkedList *linked_list);
 void free_linked_list(LinkedList *linked_list);
