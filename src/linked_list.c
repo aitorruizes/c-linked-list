@@ -286,8 +286,27 @@ void reverse_linked_list(LinkedList *linked_list)
   linked_list->head_node = previous_node;
 }
 
+/**
+ * \brief Searches for a node in the linked list by its data.
+ *
+ * This function iterates through the linked list and compares the data of each node
+ * with the provided `node_data`. If a node with matching data is found, the function
+ * returns a pointer to that node. If no match is found or the list is empty, it returns `NULL`.
+ *
+ * \param linked_list A pointer to the linked list to search in.
+ * \param node_data The data to search for in the linked list.
+ *
+ * \return A pointer to the node containing the matching data, or `NULL` if no node is found.
+ */
 Node *find_node_by_data(LinkedList *linked_list, NodeData node_data)
 {
+  if (linked_list == NULL)
+  {
+    printf("[ERROR] You cannot search on an empty linked list.\n");
+
+    return NULL;
+  }
+
   Node *current_node = linked_list->head_node;
 
   while (current_node != NULL)
