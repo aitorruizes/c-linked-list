@@ -27,5 +27,6 @@ LinkedList *create_linked_list(PrintDataFunction print_data_function, FreeDataFu
 Node *create_node(NodeData node_data);
 void insert_node_at_head(LinkedList *linked_list, NodeData node_data);
 void print_linked_list(LinkedList *linked_list);
+void free_linked_list(LinkedList *linked_list);
 
 #endif

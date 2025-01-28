@@ -101,3 +101,28 @@ void print_linked_list(LinkedList *linked_list)
     current_node = current_node->next_node;
   }
 }
+
+void free_linked_list(LinkedList *linked_list)
+{
+  if (linked_list == NULL)
+  {
+    return;
+  }
+
+  Node *current_node = linked_list->head_node;
+  Node *next_node = NULL;
+
+  while (current_node != NULL)
+  {
+    next_node = current_node->next_node;
+
+    linked_list->free_data_function(current_node->node_data);
+
+    free(current_node);
+
+    current_node = next_node;
+  }
+
+  linked_list->head_node = NULL;
+  linked_list->tail_node = NULL;
+}
