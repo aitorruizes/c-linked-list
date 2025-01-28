@@ -220,6 +220,18 @@ void free_linked_list(LinkedList *linked_list)
   linked_list->tail_node = NULL;
 }
 
+/**
+ * \brief Returns the length of the linked list.
+ *
+ * This function iterates through the linked list starting from the head node and counts
+ * the number of nodes until it reaches the end of the list (i.e., when `current_node` becomes `NULL`).
+ * It returns the total count of nodes in the list. If the list is empty (i.e., the `head_node` is `NULL`),
+ * it returns 0.
+ *
+ * \param linked_list A pointer to the `LinkedList` whose length is to be calculated.
+ *
+ * \return The number of nodes in the linked list.
+ */
 int get_linked_list_length(LinkedList *linked_list)
 {
   int number_of_nodes = 0;
