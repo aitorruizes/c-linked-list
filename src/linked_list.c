@@ -67,3 +67,25 @@ Node *create_node(NodeData node_data)
 
   return node;
 }
+
+void insert_node_at_head(LinkedList *linked_list, NodeData node_data)
+{
+  Node *node = create_node(node_data);
+
+  if (node == NULL)
+  {
+    printf("[ERROR] An error occurred while creating a new node.\n");
+
+    return;
+  }
+
+  if (linked_list->head_node == NULL)
+  {
+    linked_list->head_node = node;
+    linked_list->tail_node = node;
+    
+    return;
+  }
+
+  node->next_node = linked_list->head_node;
+}
