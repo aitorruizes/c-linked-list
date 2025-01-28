@@ -90,6 +90,27 @@ void insert_node_at_head(LinkedList *linked_list, NodeData node_data)
   }
 }
 
+void insert_node_at_tail(LinkedList *linked_list, NodeData node_data)
+{
+  Node *new_node = create_node(node_data);
+
+  if (new_node == NULL)
+  {
+    printf("[ERROR] An error occurred while creating a new node.\n");
+    return;
+  }
+
+  if (linked_list->head_node == NULL)
+  {
+    linked_list->head_node = new_node;
+    linked_list->tail_node = new_node;
+  }
+  else
+  {
+    linked_list->tail_node->next_node = new_node;
+  }
+}
+
 void print_linked_list(LinkedList *linked_list)
 {
   Node *current_node = linked_list->head_node;

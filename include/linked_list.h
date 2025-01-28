@@ -26,6 +26,7 @@ typedef struct LinkedList
 LinkedList *create_linked_list(PrintDataFunction print_data_function, FreeDataFunction free_data_function, CompareDataFunction compare_data_function);
 Node *create_node(NodeData node_data);
 void insert_node_at_head(LinkedList *linked_list, NodeData node_data);
+void insert_node_at_tail(LinkedList *linked_list, NodeData node_data);
 void print_linked_list(LinkedList *linked_list);
 void free_linked_list(LinkedList *linked_list);
 
