@@ -3,6 +3,21 @@
 
 #include "../include/linked_list.h"
 
+/**
+ * \brief Creates a new linked list with the provided function pointers.
+ *
+ * This function allocates memory for a new `LinkedList` structure, initializes its fields,
+ * and sets the function pointers for printing, freeing, and comparing node data. It performs
+ * checks to ensure that none of the function pointers are NULL, and if any are, an error
+ * message is printed and the function returns `NULL`. If memory allocation for the linked list
+ * fails, an error message is also printed.
+ *
+ * \param print_data_function A function pointer used to print the data of a node.
+ * \param free_data_function A function pointer used to free the data of a node.
+ * \param compare_data_function A function pointer used to compare the data of two nodes.
+ *
+ * \return A pointer to the newly created `LinkedList` if successful, or `NULL` if an error occurs.
+ */
 LinkedList *create_linked_list(PrintDataFunction print_data_function, FreeDataFunction free_data_function, CompareDataFunction compare_data_function)
 {
   if (print_data_function == NULL)
