@@ -3,7 +3,7 @@
 
 #include "../include/linked_list.h"
 
-LinkedList *create_linked_list(void (*print_data_function)(NodeData *), void (*free_data_function)(NodeData *), void (*compare_data_function)(NodeData *, NodeData *))
+LinkedList *create_linked_list(PrintDataFunction print_data_function, FreeDataFunction free_data_function, CompareDataFunction compare_data_function)
 {
   if (print_data_function == NULL)
   {
