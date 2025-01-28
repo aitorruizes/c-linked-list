@@ -147,3 +147,24 @@ void free_linked_list(LinkedList *linked_list)
   linked_list->head_node = NULL;
   linked_list->tail_node = NULL;
 }
+
+int get_linked_list_length(LinkedList *linked_list)
+{
+  int number_of_nodes = 0;
+
+  if (linked_list->head_node == NULL)
+  {
+    return number_of_nodes;
+  }
+
+  Node *current_node = linked_list->head_node;
+
+  while (current_node != NULL)
+  {
+    current_node = current_node->next_node;
+
+    number_of_nodes++;
+  }
+
+  return number_of_nodes;
+}

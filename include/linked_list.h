@@ -29,5 +29,6 @@ void insert_node_at_head(LinkedList *linked_list, NodeData node_data);
 void insert_node_at_tail(LinkedList *linked_list, NodeData node_data);
 void print_linked_list(LinkedList *linked_list);
 void free_linked_list(LinkedList *linked_list);
+int get_linked_list_length(LinkedList *linked_list);
 
 #endif
