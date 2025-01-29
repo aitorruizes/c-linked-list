@@ -189,4 +189,6 @@ void reverse_linked_list(LinkedList *linked_list);
  */
 Node *find_node_by_data(LinkedList *linked_list, NodeData node_data);
 
+bool is_valid_linked_list(LinkedList *linked_list);
+
 #endif

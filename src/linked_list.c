@@ -109,6 +109,13 @@ Node *create_node(NodeData node_data)
  */
 void insert_node_at_head(LinkedList *linked_list, NodeData node_data)
 {
+  if (!is_valid_linked_list(linked_list))
+  {
+    printf("[ERROR] You cannot insert a node on a NULL linked list.\n");
+
+    return;
+  }
+
   Node *new_node = create_node(node_data);
 
   if (new_node == NULL)
@@ -143,6 +150,13 @@ void insert_node_at_head(LinkedList *linked_list, NodeData node_data)
  */
 void insert_node_at_tail(LinkedList *linked_list, NodeData node_data)
 {
+  if (!is_valid_linked_list(linked_list))
+  {
+    printf("[ERROR] You cannot insert a node on a NULL linked list.\n");
+
+    return;
+  }
+
   Node *new_node = create_node(node_data);
 
   if (new_node == NULL)
@@ -174,6 +188,13 @@ void insert_node_at_tail(LinkedList *linked_list, NodeData node_data)
  */
 void print_linked_list(LinkedList *linked_list)
 {
+  if (!is_valid_linked_list(linked_list))
+  {
+    printf("[ERROR] You cannot print a NULL linked list.\n");
+
+    return;
+  }
+
   Node *current_node = linked_list->head_node;
 
   while (current_node != NULL)
@@ -197,8 +218,10 @@ void print_linked_list(LinkedList *linked_list)
  */
 void free_linked_list(LinkedList *linked_list)
 {
-  if (linked_list == NULL)
+  if (!is_valid_linked_list(linked_list))
   {
+    printf("[ERROR] You cannot free a NULL linked list.\n");
+
     return;
   }
 
@@ -236,7 +259,7 @@ int get_linked_list_length(LinkedList *linked_list)
 {
   int number_of_nodes = 0;
 
-  if (linked_list->head_node == NULL)
+  if (!is_valid_linked_list(linked_list) || linked_list->head_node == NULL)
   {
     return number_of_nodes;
   }
@@ -264,6 +287,13 @@ int get_linked_list_length(LinkedList *linked_list)
  */
 void reverse_linked_list(LinkedList *linked_list)
 {
+  if (!is_valid_linked_list(linked_list))
+  {
+    printf("[ERROR] You cannot reverse a NULL linked list.\n");
+
+    return;
+  }
+
   if (linked_list->head_node == NULL)
   {
     printf("[ERROR] You cannot reverse an empty linked list.\n");
@@ -300,9 +330,9 @@ void reverse_linked_list(LinkedList *linked_list)
  */
 Node *find_node_by_data(LinkedList *linked_list, NodeData node_data)
 {
-  if (linked_list == NULL)
+  if (!is_valid_linked_list(linked_list))
   {
-    printf("[ERROR] You cannot search on an empty linked list.\n");
+    printf("[ERROR] You cannot insert a node on a NULL linked list.\n");
 
     return NULL;
   }
@@ -320,4 +350,9 @@ Node *find_node_by_data(LinkedList *linked_list, NodeData node_data)
   }
 
   return NULL;
+}
+
+bool is_valid_linked_list(LinkedList *linked_list)
+{
+  return linked_list != NULL;
 }
