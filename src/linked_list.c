@@ -352,6 +352,17 @@ Node *find_node_by_data(LinkedList *linked_list, NodeData node_data)
   return NULL;
 }
 
+/**
+ * \brief Checks if a linked list is valid.
+ *
+ * This function checks whether the provided linked list pointer is not NULL.
+ * It is a simple validation function to ensure the linked list is properly
+ * allocated before performing any further operations on it.
+ *
+ * \param linked_list A pointer to the linked list to be checked.
+ *
+ * \return true if the linked list is not NULL, false otherwise.
+ */
 bool is_valid_linked_list(LinkedList *linked_list)
 {
   return linked_list != NULL;
