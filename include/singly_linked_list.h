@@ -202,6 +202,20 @@ Node *find_node_by_data(SinglyLinkedList *singly_linked_list, NodeData node_data
  */
 bool is_valid_singly_linked_list(SinglyLinkedList *singly_linked_list);
 
+/**
+ * \brief Deletes nodes from the singly linked list that match the provided data.
+ *
+ * This function iterates through the singly linked list, comparing the data of each node
+ * with the provided `node_data`. If a node with matching data is found, the node is deleted,
+ * and its memory is freed. The list is updated accordingly, and the head and tail pointers
+ * are adjusted if necessary. The function will remove all matching nodes, and the number of
+ * deleted nodes is returned.
+ *
+ * \param singly_linked_list A pointer to the singly linked list from which nodes will be deleted.
+ * \param node_data The data to search for in the singly linked list. Nodes with matching data will be deleted.
+ *
+ * \return The number of nodes that were deleted from the list.
+ */
 int delete_node_by_data(SinglyLinkedList *singly_linked_list, NodeData node_data);
 
 #endif
