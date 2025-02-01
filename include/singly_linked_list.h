@@ -202,4 +202,6 @@ Node *find_node_by_data(SinglyLinkedList *singly_linked_list, NodeData node_data
  */
 bool is_valid_singly_linked_list(SinglyLinkedList *singly_linked_list);
 
+int delete_node_by_data(SinglyLinkedList *singly_linked_list, NodeData node_data);
+
 #endif

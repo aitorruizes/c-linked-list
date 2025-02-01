@@ -367,3 +367,60 @@ bool is_valid_singly_linked_list(SinglyLinkedList *singly_linked_list)
 {
   return singly_linked_list != NULL;
 }
+
+int delete_node_by_data(SinglyLinkedList *singly_linked_list, NodeData node_data)
+{
+  int deleted_nodes_count = 0;
+
+  if (!is_valid_singly_linked_list(singly_linked_list))
+  {
+    printf("[ERROR] You cannot delete a node on a NULL singly linked list.\n");
+
+    return deleted_nodes_count;
+  }
+
+  Node *current_node = singly_linked_list->head_node;
+  Node *previous_node = NULL;
+
+  while (current_node != NULL)
+  {
+    if (singly_linked_list->compare_data_function(current_node->node_data, node_data))
+    {
+      Node *node_to_delete = current_node;
+
+      if (previous_node == NULL)
+      {
+        singly_linked_list->head_node = current_node->next_node;
+
+        if (singly_linked_list->head_node == NULL)
+        {
+          singly_linked_list->tail_node = NULL;
+        }
+      }
+      else
+      {
+        previous_node->next_node = current_node->next_node;
+
+        if (current_node->next_node == NULL)
+        {
+          singly_linked_list->tail_node = previous_node;
+        }
+      }
+
+      current_node = current_node->next_node;
+
+      singly_linked_list->free_data_function(node_to_delete->node_data);
+
+      free(node_to_delete);
+
+      deleted_nodes_count++;
+    }
+    else
+    {
+      previous_node = current_node;
+      current_node = current_node->next_node;
+    }
+  }
+
+  return deleted_nodes_count;
+}
